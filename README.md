@@ -13,7 +13,7 @@ pip install -r requirements.txt
 To start the server, run the following command:
 
 ```bash
-python app.py
+fastapi run
 ```
 
 ---
