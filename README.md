@@ -1,4 +1,4 @@
-# Basic Python API Porject with sqlite3
+# Basic Python API Project with sqlite3
 
 ## Installation
 
