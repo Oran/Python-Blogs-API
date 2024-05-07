@@ -23,3 +23,11 @@ def get_posts_by_user(userId):
         return data
     except sql.OperationalError as e:
         print("Error connecting to the database:", e)
+
+def get_api_keys():
+    try:
+        dbCursor.execute("SELECT * FROM APIKeys")
+        data = dbCursor.fetchall()
+        return data
+    except sql.OperationalError as e:
+        print("Error connecting to the database:", e)
