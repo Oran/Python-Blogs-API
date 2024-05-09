@@ -1,6 +1,6 @@
-from fastapi import Depends, FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException
 from database.add_records import add_post, add_user
-from database.read_records import get_api_keys, get_posts, get_users
+from database.read_records import get_posts, get_users
 from database.truncate import delete_post, delete_user
 from database.create_tables import *
 from functions import check_api_key, hash_password
@@ -56,7 +56,7 @@ async def addPost(body: dict, key: str):
         return HTTPException(status_code=401, detail="Invalid API Key")
 
 # Delete Specific Post
-@app.post("/db/delete/post={id}")
+@app.post("/db/delete/post")
 async def deletePost(id: int, key: str):
     if check_api_key(key):
         delete_post(id)
